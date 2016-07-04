@@ -1731,7 +1731,7 @@ select {
     width: 100%;
     z-index: 99;
     min-height: 122px;
-    border-bottom: 2px solid #636363;
+    border-bottom: 1px solid #DDD;
 }
 
     .main-header .container {
