@@ -1,0 +1,73 @@
+
+<div class="row page-posts" id="content_box" style="padding:0">
+    <div class="col-md-12 col-xs-12">
+        <div class="text-left" ng-show="loading">
+            <img src="app/themes/img/facebook.gif" style="position: relative; top: 10px; margin-right: 10px;" />
+        </div>
+        <div class="post text-left" ng-show="naoencontrado">
+            <h2 class="title">
+                Desculpe! Nenhum post encontrado.
+            </h2>
+            <div class="row">
+                <div class="col-md-12 col-xs-12">
+                    <div class="post-content post-corpo subNoticiasCaminho">
+                        <p>Voltar a <a ng-href="/direitoconcursos/index.html#/">Home</a> e veja todos os posts do Direito dos Concursos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="post text-left" ng-repeat="p in lista">
+            <h2 class="title">
+                <a ng-href="{{'/direitoconcursos/index.html#/post/' + p.url}}" title="{{p.title}}" rel="bookmark">{{p.title}}</a>
+            </h2>
+            <div class="subNoticias">
+                <img src="app/themes/img/time.png" /><div class="subNoticiasData">&nbsp;{{p.publicada | date:'dd/MM/yyyy'}}</div>
+                <div class="subNoticiasSecao" ng-repeat="category in p.categorias">
+                    <img src="app/themes/img/court.png"/>&nbsp;
+                    <a ng-href="{{'/direitoconcursos/index.html#/posts/categoria/' + category}}" title="{{category}}" rel="nofollow"><span>{{category}}</span></a>
+                </div>
+                <div class="subNoticiasPor">
+                    <img src="app/themes/img/user.png" />&nbsp;
+                    <span>
+                        Por
+                        <a ng-href="{{'/direitoconcursos/index.html#/posts/autor/' + p.autores}}" title="{{p.autores}}" rel="nofollow">{{p.autores}}</a>
+                    </span>
+                </div>
+                <div class="subNoticiasCampos">
+                    <span ng-repeat="campo in p.camposdeInteresse">
+                        <a ng-href="/direitoconcursos/index.html#/posts/interesse/{{campo.title}}" style="background-color:{{campo.cor}};padding:5px 10px;color:white;font-weight:bold;font-size:11px;border-radius:1px;">
+                            <img ng-src="{{campo.iconeBranco}}" class="interesses-iconebranco" />&nbsp;{{campo.title}}
+                        </a>
+                    </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-xs-12">
+                    <div class="post-corpo">
+                        <p ng-bind-html="p.breveDescricao | limitTo: 300 + ' ...'"></p>
+                        <a class="subNoticiasLeia" ng-href="{{'/direitoconcursos/index.html#/post/' + p.url}}" title="{{p.title}}">Leia mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<nav class="paginacaoHome" style="text-align:left;margin:0" ng-show="pagination">
+    <ul class="paginacao">
+        <li ng-show="previousview">
+            <a onclick="goBack()" aria-label="Previous" style="float:none">
+                <span aria-hidden="true">{{namePrevious}}</span>
+            </a>
+        </li>
+        <li ng-show="nextview">
+            <a ng-href="{{nextpage}}" aria-label="Next" style="float:none">
+                <span aria-hidden="true">{{nameNext}}</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+<script type="text/javascript">
+    function goBack() {
+        window.history.back()
+    }
+</script>

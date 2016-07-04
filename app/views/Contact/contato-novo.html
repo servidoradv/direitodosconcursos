@@ -1,0 +1,228 @@
+
+<div class="row page-posts" id="content_box" style="padding: 0">
+    <div class="post container text-left">
+        <h1 class="contatoTopo"><strong>contato</strong></h1>
+        <br>
+        <div class="form-contato contatoDC">
+            <form name="form" id="conversion-form" action="https://servidorapi.azurewebsites.net/api/contatos/criar" method="POST">
+                <input name="identificador" type="hidden" value="contato-direitodosconcursos">
+                <p>
+                    <input name="nome" required="" type="text" id="nome" placeholder="Nome"><br>
+                    <input name="email" required="" type="text" id="email" placeholder="E-mail"><br>
+                    <input name="telefone" required="" type="text" id="telefone" placeholder="Telefone"><br>
+                    <select name="especialidade" id="especialidade">
+                        <option value="Perfil" selected="selected">Perfil</option>
+                        <option value="Concurso Público">Concurso Público</option>
+                        <option value="Servidor Ativo">Servidor Ativo</option>
+                        <option value="Servidor Aposentado">Servidor Aposentado</option>
+                        <option value="Entidades de classe">Entidades de classe</option>
+                    </select>
+                    <div id="divOrgao" style="display:none">
+                        <br />
+                        <input placeholder="&#211;RG&#195;O" type="text" id="orgao" name="orgao" size="30">
+                    </div>
+                    <div id="divQualConcurso" style="display:none">
+                        <br />
+                        <input placeholder="QUAL CONCURSO?" type="text" id="qualconcurso" name="qualconcurso"
+                               size="30">
+                    </div>
+                    <div id="divEntidade" style="display:none">
+                        <br />
+                        <input placeholder="NOME DA ENTIDADE" type="text" id="entidade" name="entidade"
+                               size="30">
+                    </div>
+                </p>
+                <p>
+                    <textarea cols="50" name="mensagem" required="" maxlength="4000" rows="10" placeholder="digite sua mensagem aqui"></textarea>
+                </p>
+                <div id="mensagem_erro">
+                </div>
+                <div class="actions" align="left" style="margin-top: 20px;">
+                    <div class="col span_4_of_12"></div>
+                    <input type="hidden" name="origem_contato" id="origemContatoHidden" value="acesso direto" />
+                    <script>
+                        if (window.location.href.indexOf("/ref/") != -1) {
+                            $("#origemContatoHidden").val(window.location.href.substring(window.location.href.indexOf("/ref/") + 5));
+                        } else {
+                            $("#origemContatoHidden").val("Acesso direto");
+                        }
+                    </script>
+                    <input type="hidden" name="c_utmz" id="c_utmz" value="" />
+                    <script type="text/javascript">
+                        function read_cookie(a) { var b = a + "="; var c = document.cookie.split(";"); for (var d = 0; d < c.length; d++) { var e = c[d]; while (e.charAt(0) == " ") e = e.substring(1, e.length); if (e.indexOf(b) == 0) { return e.substring(b.length, e.length) } } return null } try { document.getElementById("c_utmz").value = read_cookie("__utmz") } catch (err) { }
+                    </script>
+                    <input id="cf_submit" class="enviar enviarComment" type="submit" value="Enviar" />
+                    <div class="clear"></div>
+                </div>
+
+            </form>
+
+            <script>
+
+
+                function createCookie(a, b, c) {
+                    if (c) {
+                        var d = new Date;
+                        d.setTime(d.getTime() + c * 24 * 60 * 60 * 1e3);
+                        var e = "; expires=" + d.toGMTString()
+                    } else var e = "";
+                    document.cookie = a + "=" + b + e + "; path=/"
+                }
+
+                function readCookie(a) {
+                    var b = a + "=";
+                    var c = document.cookie.split(";");
+                    for (var d = 0; d < c.length; d++) {
+                        var e = c[d];
+                        while (e.charAt(0) == " ") e = e.substring(1, e.length);
+                        if (e.indexOf(b) == 0) return e.substring(b.length, e.length)
+                    }
+                    return null
+                }
+
+                function eraseCookie(a) {
+                    createCookie(a, "", -1)
+                }
+
+                function saveConversion() { }
+
+                function setUtmzVal() {
+                    try {
+                        var a = readCookie("__utmz");
+                        $("input[type=hidden][name=c_utmz]").val(a)
+                    } catch (b) { }
+                }
+
+                function conversionSuccess(a) {
+                    $("#cf_submit").attr("value", "Obrigado, em breve retornaremos seu contato!");
+                    $("#cf_submit").addClass("button-success");
+                    $("#cf_submit").closest('form').find("input[type=text], textarea").val("");
+                    ga('send', {
+                        'hitType': 'pageview',
+                        'page': '/contato-enviado',
+                        'title': 'Obrigado pelo seu contato'
+                    });
+                }
+
+                function conversionError(a) {
+                    $("#cf_submit").attr("value", "Erro ao enviar mensagem");
+                    $("#cf_submit").removeAttr("disabled");
+                    $("#cf_submit").addClass("button-error")
+                }
+
+                function parseRDR(a) { }
+
+                function preSubmit(formData) {
+                    var queryString = $.param(formData);
+                    var erros = "";
+                    if ($("#especialidade").val() == "Perfil") {
+                        erros += "<p>Selecione o <strong>PERFIL</strong>, por favor</p>";
+                    }
+                    if ($("#nome").val().length == 0) {
+                        erros += "<p>Preencha o <strong>NOME</strong>, por favor</p>";
+                    }
+                    if ($("#email").val().length == 0) {
+                        erros += "<p>Preencha o <strong>E-MAIL</strong>, por favor</p>";
+                    }
+                    if ($("#telefone").val().length == 0) {
+                        erros += "<p>Preencha o número do seu <strong>TELEFONE</strong>, por favor</p>";
+                    }
+                    $("#mensagem_erro").html("");
+                    if (erros.length > 0) {
+                        $("#mensagem_erro").html(erros);
+                        return false;
+                    } else {
+                        $("#cf_submit").attr("value", "Aguarde. Enviando mensagem...");
+                        $("#cf_submit").attr("disabled", "disabled");
+                        $("#cf_submit").addClass("button-busy");
+                        return true;
+                    }
+                }
+
+                function ajaxCb(a) {
+                    if (a.status === 200) {
+                        conversionSuccess(a)
+                    } else {
+                        conversionError(a)
+                    }
+                }
+                if (typeof console == "undefined" || typeof console.log == "undefined") var console = {
+                    log: function () { }
+                };
+
+                $(document).ready(function (a) {
+                    setUtmzVal();
+                    var formData = new FormData(this);
+                    var d = $("#conversion-form").attr("action");
+                    var e = {
+                        url: d,
+                        type: "GET",
+                        dataType: "script",
+                        beforeSubmit: preSubmit,
+                        complete: ajaxCb
+                    };
+                    $("#conversion-form").ajaxForm(e);
+                });
+
+                $("#especialidade").change(function () {
+
+                    $("#divOrgao").attr('style', 'display:none');
+                    $("#divQualConcurso").attr('style', 'display:none');
+                    $("#divEntidade").attr('style', 'display:none');
+
+                    $("#qualconcurso").val("");
+                    $("#entidade").val("");
+                    $("#orgao").val("");
+
+                    /*if ($("#especialidade").val() == "Concurso Público")
+                        $("#divQualConcurso").removeAttr('style');
+                    else if ($("#especialidade").val() == "Entidades de classe")
+                        $("#divEntidade").removeAttr('style');
+                    else
+                        $("#divOrgao").removeAttr('style');*/
+
+
+                });
+            </script>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-35435323-11', 'auto');
+    ga('send', 'pageview');
+
+</script>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-35435323-12', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+<!-- Hotjar Tracking Code for servidor.adv.br -->
+<script>
+    (function (f, b) {
+        var c;
+        f.hj = f.hj || function () { (f.hj.q = f.hj.q || []).push(arguments) };
+        f._hjSettings = { hjid: 33375, hjsv: 4 };
+        c = b.createElement("script"); c.async = 1;
+        c.src = "//static.hotjar.com/c/hotjar-" + f._hjSettings.hjid + ".js?sv=" + f._hjSettings.hjsv;
+        b.getElementsByTagName("head")[0].appendChild(c);
+    })(window, document);
+
+</script>

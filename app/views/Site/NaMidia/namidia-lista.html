@@ -1,0 +1,34 @@
+﻿
+<div class="row">
+    <div class="col-md-9 col-xs-12 noticias-pagina-bgbranco">
+        <div class="text-align" ng-show="loading"><img src="/app/themes/img/ajax-loader.gif" style="position: relative;top: 10px;margin-right: 10px;" />&nbsp;Carregando...</div>
+        <ul>
+            <li ng-repeat="n in lista">
+                <h1><a href="{{'/#/namidia/' + n.id}}" class="title">{{n.title}}</a></h1>
+                <div class="data" ng-bind="n.dataPublicacao | date:'dd/MM/yyyy'"></div>
+                <br /><br />
+                <p ng-bind-html="noticia.corpo"></p>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-3 col-xs-12 paddingLeft0">
+        <div class="assessoria-imprensa">
+            <h3>Assessoria de Comunicação</h3>
+            <ul>
+                <li><a href="http://servidor.adv.br/boletim.html" target="_self">Boletim</a></li>
+                <li><a href="http://servidor.adv.br/imprensa.html" target="_self">Contato para Jornalistas</a></li>
+                <li><a href="/#/noticias" target="_self">Notícias</a></li>
+            </ul>
+        </div>
+        <div class="noticias-relacionadas">
+            <h3>Leia mais notícias</h3>
+            <ul>
+                <li ng-repeat="n in listaRelacionada">
+                    <p ng-bind="n.dataPublicacao | date:'dd/MM/yyyy'"></p>
+                    <h1><a href="{{'/#/namidia/' + n.id}}" class="title">[...] {{n.title}} [...]</a></h1>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+

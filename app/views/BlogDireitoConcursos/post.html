@@ -1,0 +1,306 @@
+﻿<div class="row page-posts" id="content_box" style="padding:0">
+    <div class="col-md-12 col-xs-12">
+        <div class="text-left" ng-show="loading">
+            <img src="app/themes/img/facebook.gif" style="position: relative; top: 10px; margin-right: 10px;" />
+        </div>
+        <div class="post text-left" ng-show="naoencontrado">
+            <h2 class="title">
+                Desculpe! Nenhum post encontrado.
+            </h2>
+            <div class="row">
+                <div class="col-md-12 col-xs-12">
+                    <div class="post-content post-corpo subNoticiasCaminho">
+                        <p>Voltar a <a ng-href="/direitoconcursos/index.html#/">Home</a> e veja todos os posts do Direito dos Concursos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="post text-left" ng-show="postencontrado">
+            <div class="subNoticiasCaminho">
+                <a ng-href="/direitoconcursos/index.html#/" rel="nofollow">Home</a>&nbsp;&nbsp;»&nbsp;&nbsp;
+                <span ng-repeat="category in item.categorias">
+                    <a ng-href="{{'/direitoconcursos/index.html#/posts/categoria/' + category}}" title="{{category}}" rel="nofollow">{{category}}</a>&nbsp;
+                </span>
+                &nbsp;»&nbsp;&nbsp; {{item.title}}
+            </div>
+            <h2 class="title">{{item.title}}</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="subNoticias">
+                        <img src="app/themes/img/time.png" /><div class="subNoticiasData">&nbsp;{{item.publicada | date:'dd/MM/yyyy'}}</div>
+                        <img src="app/themes/img/court.png" style="padding-left: 20px;" />
+                        <div class="subNoticiasSecao" ng-repeat="category in item.categorias">
+                            <a ng-href="{{'/direitoconcursos/index.html#/posts/categoria/' + category}}" title="{{category}}" rel="nofollow"><span>{{category}}</span></a>
+                        </div>
+                        <img src="app/themes/img/user.png" style="padding-left: 20px;" />
+                        <div class="subNoticiasPor">
+                            Por
+                            <a ng-href="{{'/direitoconcursos/index.html#/posts/autor/' + item.autores}}" title="{{item.autores}}" rel="nofollow">{{item.autores}}</a>
+                        </div>
+                        <div class="subNoticiasCampos">
+                            <span ng-repeat="campo in item.camposdeInteresse">
+                                <a ng-href="/direitoconcursos/index.html#/posts/interesse/{{campo.title}}" style="background-color:{{campo.cor}};padding:5px 10px;color:white;font-weight:bold;font-size:11px;border-radius:1px;">
+                                    <img ng-src="{{campo.iconeBranco}}" class="interesses-iconebranco" />&nbsp;{{campo.title}}
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 img-Post">
+                    <img ng-src="{{item.imagem}}" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p ng-bind-html="item.corpo"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h5 class="tagsPost">
+                        <strong>Tags</strong>
+                        <span ng-repeat="tag in Tags">
+                            <a ng-href="{{'/direitoconcursos/index.html#/posts/tags/' + tag.nome}}" title="{{tag.nome}}" rel="nofollow">{{tag.nome}}&nbsp;|&nbsp;</a>
+                        </span>
+                        <span ng-show="NenhumTaglocalizada">Nenhuma tag relacionada.</span>
+                    </h5>
+                    <br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-left">
+                    <div class="share-links">
+                        <a href="{{'http://www.facebook.com/sharer.php?u=http://www.servidor.adv.br/direitoconcursos/index.html#/post/' + item.url }}" class="fa fa-facebook" target="_blank">
+                        </a>
+
+                        <a href="{{'https://plus.google.com/share?url=http://www.servidor.adv.br/direitoconcursos/index.html#/post/' + item.url }}" class="fa fa-google-plus" target="_blank">
+                        </a>
+
+                        <a href="{{'http://www.linkedin.com/shareArticle?mini=true&amp;url=http://www.servidor.adv.br/direitoconcursos/index.html#/post/' + item.url }}" class="fa fa-linkedin" target="_blank">
+                        </a>
+
+                        <a href="{{'https://twitter.com/share?url=http://www.servidor.adv.br/direitoconcursos/index.html#/post/' + item.url + '&amp;text='+ item.title +'&amp;hashtags=direitodosconcursos'}}" class="fa fa-twitter" target="_blank">
+                        </a>
+
+                        <a href="{{'mailto:?Subject='+ item.title + '&amp;Body='+ item.brevedescricao +' http://www.servidor.adv.br/direitoconcursos/index.html#/post/' + item.url }}" class="fa fa-envelope-o">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <hr style="width:100%">
+                    <h3 class="titlePost">
+                        Posts Relacionados
+                    </h3>
+                    <br>
+                </div>
+                <div class="col-md-12 col-xs-12">
+                    <div class="text-left" ng-show="loadingPostRelacionado" style="padding-bottom:30px">
+                        <img src="app/themes/img/facebook.gif" style="position: relative; top: 10px; margin-right: 10px;" />
+                    </div>
+                    <div class="text-align" ng-show="Nenhumlocalizado">
+                        Nenhum post relacionado.
+                    </div>
+                    <div class="col-md-4 col-xs-6" ng-repeat="PostRel in PostRelacionado">
+                        <a ng-href="{{'/direitoconcursos/index.html#/post/' + PostRel.url}}" title="{{PostRel.title}}" rel="nofollow">{{PostRel.title}}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <hr style="width:100%">
+                    <h3 class="titlePost">
+                        Comentários
+                    </h3>
+                    <br>
+                </div>
+                <div class="col-md-12 col-xs-12">
+                    <div class="text-align" ng-show="NenhumComentario">
+                        Nenhum comentário para o post.
+                    </div>
+                    <ul ng-show="Comentarioencontrado">
+                        <li ng-repeat="comentario in item.comentarios" style="list-style-type:none;padding-bottom:5px;padding-top:10px;">
+                            <strong>[{{comentario.created | date:'dd/MM/yyyy'}}]&nbsp;<span ng-bind="comentario.autor" style="font-weight:bold;font-style:italic"></span></strong>
+                            <p ng-bind-html="comentario.corpo"></p>
+                            <div class="col-md-offset-1" style="font-style:italic;" ng-bind-html="comentario.resposta"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <hr style="width:100%">
+                    <div id="deixe-resposta">
+                        <div id="respond">
+                            <h3>Deixe seu comentário</h3>
+                            <form id="commentform" class="comment-form" action="https://servidorapi.azurewebsites.net/api/Comentarios/Inserir" method="POST">
+                                <p class="comment-notes"><span id="email-notes">O seu endereço de e-mail não será publicado.</span> Campos obrigatórios são marcados com <span class="required">*</span></p>
+                                <p class="comment-form-comment">
+                                    <textarea id="comment" name="mensagem" cols="45" rows="8" aria-required="true" required="required"></textarea>
+                                </p>
+                                <p class="comment-form-email">
+                                    <label for="email">E-mail <span class="required">*</span></label>
+                                    <input id="email" name="email" type="text" value="" size="30" aria-describedby="email-notes" aria-required="true" required="required">
+                                </p>
+                                <p class="comment-form-nome">
+                                    <label for="nome">Nome <span class="required">*</span></label>
+                                    <input id="nome" name="nome" type="text" value="" size="30" aria-describedby="nome-notes" aria-required="true" required="required">
+                                </p>
+                                <p class="form-submit">
+                                    <input name="submit" type="submit" id="submit" class="submit publicarComentario" value="Publicar comentário">
+                                    <input type="hidden" name="idPost" value="{{item.id}}" id="idPost">
+                                    <input type="hidden" name="url" id="url" value="direitodosconcursos">
+                                </p>
+                                <input type="hidden" name="c_utmz" id="c_utmz" value="">
+                                <script type="text/javascript">
+                                    function read_cookie(a) { var b = a + "="; var c = document.cookie.split(";"); for (var d = 0; d < c.length; d++) { var e = c[d]; while (e.charAt(0) == " ") e = e.substring(1, e.length); if (e.indexOf(b) == 0) { return e.substring(b.length, e.length) } } return null } try { document.getElementById("c_utmz").value = read_cookie("__utmz") } catch (err) { }
+                                </script>
+                            </form>
+                            <div id="mensagem_erro">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="fb-comments" data-href="{{linkPaginaURL}}" data-width="100%" data-numposts="50"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="fb-root"></div>
+<script>
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=1619461344983815";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script>
+    function createCookie(a, b, c) {
+        if (c) {
+            var d = new Date;
+            d.setTime(d.getTime() + c * 24 * 60 * 60 * 1e3);
+            var e = "; expires=" + d.toGMTString()
+        } else var e = "";
+        document.cookie = a + "=" + b + e + "; path=/"
+    }
+
+    function readCookie(a) {
+        var b = a + "=";
+        var c = document.cookie.split(";");
+        for (var d = 0; d < c.length; d++) {
+            var e = c[d];
+            while (e.charAt(0) == " ") e = e.substring(1, e.length);
+            if (e.indexOf(b) == 0) return e.substring(b.length, e.length)
+        }
+        return null
+    }
+
+    function eraseCookie(a) {
+        createCookie(a, "", -1)
+    }
+
+    function saveConversion() { }
+
+    function setUtmzVal() {
+        try {
+            var a = readCookie("__utmz");
+            $("input[type=hidden][name=c_utmz]").val(a)
+        } catch (b) { }
+    }
+
+    function conversionSuccess(a) {
+        $("#submit").attr("value", "Comentário enviado com sucesso.");
+        $("#submit").closest('form').find("input[type=text], input[type=email], textarea").val("");
+    }
+
+    function conversionError(a) {
+        $("#submit").attr("value", "Erro ao enviar comentário");
+        $("#submit").removeAttr("disabled");
+    }
+
+    function parseRDR(a) { }
+
+    function preSubmit(formData) {
+        var queryString = $.param(formData);
+        var erros = "";
+        if ($("#nome").val().length == 0) {
+            erros += "<p>Preencha o <strong>NOME</strong>, por favor</p>";
+        }
+        if ($("#email").val().length == 0) {
+            erros += "<p>Preencha o <strong>E-MAIL</strong>, por favor</p>";
+        }
+        $("#mensagem_erro").html("");
+        if (erros.length > 0) {
+            $("#mensagem_erro").html(erros);
+            return false;
+        } else {
+            $("#submit").attr("value", "Aguarde. Enviando comentário...");
+            $("#submit").attr("disabled", "disabled");
+            $("#submit").addClass("button-busy");
+            return true;
+        }
+    }
+
+    function ajaxCb(a) {
+        if (a.status === 200) {
+            conversionSuccess(a)
+        } else {
+            conversionError(a)
+        }
+    }
+    if (typeof console == "undefined" || typeof console.log == "undefined") var console = {
+        log: function () { }
+    };
+
+    $(document).ready(function (a) {
+        setUtmzVal();
+        var formData = new FormData(this);
+        var d = $("#commentform").attr("action");
+        var e = {
+            url: d,
+            type: "GET",
+            dataType: "script",
+            beforeSubmit: preSubmit,
+            complete: ajaxCb
+        };
+        $("#commentform").ajaxForm(e);
+    });
+
+</script>
+<style>
+    input#author, input#email, input#url, input#nome {
+        width: 300px;
+        border: 1px solid #F4F4F4;
+        background: #fff;
+        font-size: 14px;
+        float: left;
+        clear: both;
+        max-width: 85%;
+    }
+
+    input#author, input#email, input#url, #comment, input#nome {
+        -webkit-transition: all 0.25s ease-in-out;
+        -moz-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;
+        border-color: #BEBEBE;
+    }
+
+    .img-Post {
+        text-align: center;
+        margin-bottom: 30px;
+        max-width: 100%;
+    }
+
+        .img-Post img {
+            width: 100%;
+            max-height: 400px;
+        }
+</style>

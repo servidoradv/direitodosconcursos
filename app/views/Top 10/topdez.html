@@ -1,0 +1,29 @@
+<div class="row page-posts" id="content_box" style="padding:0">
+    <div class="col-md-12 col-xs-12">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="title" style="font-weight: bold;">Tire suas dúvidas sobre Investigação Social aqui:</h1>
+            </div>
+        </div>
+        <div class="text-left" ng-show="loading">
+            <img src="app/themes/img/facebook.gif" style="position: relative; top: 10px; margin-right: 10px;" />
+        </div>
+        <div class="post" ng-repeat="item in lista">              
+            <h2 class="title">{{item.pergunta}}</h2>
+            <div class="row">
+                <div class="col-md-12 post-corpo">
+                    <p ng-bind-html="item.resposta"></p>
+                </div>
+            </div>            
+        </div>   
+    </div>    
+</div>
+
+<style>
+    h2.title {
+        font-size:20px;
+    }
+    .secaoItens {
+        display:none;
+    }
+</style>

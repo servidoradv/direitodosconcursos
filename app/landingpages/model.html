@@ -1,0 +1,218 @@
+<!doctype html>
+<html ng-app="Servidor">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Cassel Ruzzarin Santos Rodrigues</title>
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+	<meta charset=utf-8>
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="title" content="Cassel Ruzzarin Santos Rodrigues - Advogados">
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	<meta property="og:site_name" content="Cassel Ruzzarin Santos Rodrigues - Advogados" />
+	<meta property="og:title" content="" />
+	<meta property="og:url" content="" />
+	<meta property="og:type" content="website" />
+	<meta property="fb:admins" content="" />
+	<!--<meta property="og:video" content="" />
+	<meta property="og:video:type" content="" />-->
+	<meta property="og:image" content="http://servidor.adv.br/img/apple-touch-icon.png" />
+	<meta name="author" content=" ">
+
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Cassel Ruzzarin Santos Rodrigues - Advogados">
+	<meta name="DC.subject" content="">
+	<meta name="DC.creator" content="Jonathas Holanda">
+
+	<!--  Mobile Viewport Fix -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<!-- This is the traditional favicon. -->
+	<link rel="shortcut icon" type="image/x-icon" href="http://servidor.adv.br/img/favicon.ico" />
+	<!-- The is the icon for iOS's Web Clip. -->
+	<link rel="apple-touch-icon" href="http://servidor.adv.br/img/apple-touch-icon.png">
+
+	<link rel="stylesheet" type="text/css" href="http://servidor.adv.br/css/angular-busy.min.css" media="screen" />
+
+	<link rel="stylesheet" href="/app/bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/app/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="/app/themes/css/utils.css">
+	<link rel="stylesheet" href="/app/themes/css/bootstrap-custom.css">
+
+	<link rel="stylesheet" href="/app/themes/css/landingpages-ebook.css">
+	<link rel="stylesheet" href="/app/themes/css/sweetalert.css">
+
+	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script src="/app/bower_components/sweet-alert/sweetalert.min.js"></script>
+</head>
+
+<body ng-app="Servidor" ng-controller="LPeBookController">
+	<header>
+		<div class="containter">
+			<div class="wrapper">
+				<div class="row">
+					<div class="col-md-3 col-xs-12 logo">
+						<img src="https://rdstation-static.s3.amazonaws.com/images/landing_page/7162/company-logo.png" />
+					</div>
+					<div class="col-md-9 col-xs-12">
+						<h1>As etapas da greve dos servidores públicos <br />Um guia para dirigentes sindicais</h1>
+						<h2>O InfoGreve preparou este e-book especialmente para os dirigentes sindicais entenderem melhor sobre o direito de greve dos servidores públicos, as etapas da greve e suas consequências jurídicas.</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<section id="conteudo">
+		<div class="container">
+			<div class="wrapper">
+				<div class="row">
+					<div class="col-md-7 col-xs-12">
+						<div class="conteudo">
+							<img src="https://rdstation-static.s3.amazonaws.com/images/landing_page/70441/Landing_Page.jpg" />
+							<br />
+							<ul>
+								<li>
+									<h3>Como proceder na etapa de reivindicação da greve?</h3>
+									<p>Descubra que tipo de documentos são necessários na fase de reivindicação.</p>
+								</li>
+								<li>
+									<h3>Quando ocorre a deflagração?</h3>
+									<p>Como a greve dos servidores públicos é regida pela Lei 7.783/89, devem ser observados alguns passos para sua deflagração.
+										Saiba mais fazendo o download do eBook.</p>
+								</li>
+								<li>
+									<h3>O que é necessário para que a condução da greve seja bem-sucedida?</h3>
+									<p>Entenda quais requisitos exigidos pela lei e pela jurisprudência devem ser observados para que a greve não seja
+										considerada abusiva.</p>
+								</li>
+								<li>
+									<h3>O que deve ser feito na etapa de encerramento?</h3>
+									<p>Saiba como deve ser feita a comunicação do encerramento da greve e como proceder em relação a eventual compensação
+										dos serviços paralisados.</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-5 col-xs-12">
+						<div class="form">
+							<h3>Faça o download grátis aqui!</h3>
+							<p>Basta preencher o formulário abaixo</p>
+							<br />
+							<div class="form-group">
+								<label>Nome*</label>
+								<input type="text" id="nome" class="form-control" />
+							</div>
+							<div class="form-group">
+								<label>E-mail*</label>
+								<input type="email" id="email" class="form-control" />
+							</div>
+							<div class="form-group">
+								<label>Qual seu perfil?*</label>
+								<select id="perfil" class="form-control">
+									<option>Selecione...</option>
+									<option value="Servidor Aposentado">Servidor Aposentado</option>
+									<option value="Concurso Público">Concurso Público</option>
+									<option value="Entidades de classe">Entidades de classe</option>
+									<option value="Outro">Outro</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label>Servidor Público*</label>
+								<select id="servidorpublico" class="form-control">
+									<option>Selecione...</option>
+									<option value="Executivo">Executivo</option>
+									<option value="Judiciário">Judiciário</option>
+									<option value="Legislativo">Legislativo</option>
+									<option value="Não sou servidor">Não sou servidor</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<input type="button" id="btnEnviar" ng-click="validarDados();" class="btn btn-success btn-block" value="Receber eBook" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<script src="/app/bower_components/jquery/dist/jquery.min.js"></script>
+
+    <script src="/app/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/app/bower_components/angular/angular.min.js"></script>
+    <script src="/app/bower_components/angular-route/angular-route.min.js"></script>
+    <script src="http://servidor.adv.br/js/angular-busy.min.js"></script>
+
+    <script src="/app.js"></script>
+	
+	<script type="text/javascript">
+	
+		app.controller('LPeBookController', ['$http', '$scope', function ($http, $scope) {
+			var urlAPI = "https://servidorapi.azurewebsites.net/api";
+			delete $http.defaults.headers.common['X-Requested-With'];
+		
+			$scope.validarDados = function()
+			{
+				var erros = "";
+		
+				if ($("#nome").val().length==0) 
+					erros += "<p>Por favor, preencha seu <strong>NOME</strong> ieeeeeeeeeeer;</p>";
+				if ($("#email").val().length==0) 
+					erros += "<p>Por favor, preencha seu <strong>E-MAIL</strong>;</p>";
+				else if ($("#email").val().indexOf("@") == -1)
+					erros += "<p>Por favor, preencha com um <strong>E-MAIL</strong> válido;</p>";
+				if ($("#perfil").val() == "Selecione...") 
+					erros += "<p>Por favor, selecione seu <strong>PERFIL</strong>;</p>";
+				if ($("#servidorpublico").val() == "Selecione...") 
+					erros += "<p>Por favor, selecione o campo <strong>SERVIDOR PÚBLICO</strong>;</p>";
+				
+				if (erros.length > 0) {
+					swal({ title: "Ops!", text: erros, html: true, type: 'warning' });
+				}else{
+					$("#btnEnviar").attr("value", "Aguarde. Enviando mensagem...");
+					$("#btnEnviar").attr("disabled", "disabled");
+					$("#btnEnviar").addClass("button-busy");
+					$scope.enviarDados();
+				}
+			};
+			
+			$scope.enviarDados = function() {
+		
+			$http({
+					method: 'GET',
+					url: urlAPI + "/Contatos/criar?identificador=Material&nome=" + $("#nome").val() + "&email=" + $("#email").val() + "&telefone=&especialidade=&orgao=&qualconcurso=&entidade=&mensagem=Contato referente ao download do Material do eBook de Teste.&origem_contato=materialeBook&c_utmz=&_=&criaratividade=true&enviarEmail=true",
+					headers: {
+						'Content-Type': 'application/x-www-form-urlencoded'
+					}
+				}).then(
+					function (response) {
+						if(response.statusText == "OK")
+						{
+							$scope.results = response.data.resultado;
+							$scope.message = response.data.mensagem;
+							
+							$("#cf_submit").attr("value", "Obrigado, em breve retornaremos seu contato!");
+							$("#cf_submit").addClass("button-success");
+							
+							swal({ title: "Obrigado!", text: "Em breve retornaremos o seu contato!", html: true, type: 'success' });
+						}
+					},
+					function (error) {
+						$scope.message = error;
+						swal({ title: "Ops!", text: error, html: true, type: 'error' });
+					});
+			}
+		}]);
+		
+	
+	</script>
+</body>
+
+</html>

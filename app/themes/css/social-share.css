@@ -1,0 +1,34 @@
+﻿#share-buttons img {
+    width: 35px;
+    padding: 5px;
+    border: 0;
+    box-shadow: 0;
+    display: inline;
+}
+
+.share-links a {
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    margin-right: 2px;
+    background: #19232d;
+}
+
+.share-links .fa-twitter {
+    background: #2aa9e0;
+}
+
+.share-links .fa-facebook {
+    background: #204385;
+}
+
+.share-links .fa-google-plus {
+    background: #d3492c;
+}
+
+.share-links .fa-linkedin {
+    background: #02669a;
+}

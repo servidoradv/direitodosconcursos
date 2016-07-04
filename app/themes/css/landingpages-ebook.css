@@ -1,0 +1,203 @@
+body
+{
+	font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    height: 100%;
+    width: 100%;
+	background-color: #FAFAFA;
+}
+
+header
+{
+    color: #a92d33;
+    padding: 20px;
+}
+
+@media screen and (max-width: 1019px) and (min-width: 760px)
+{
+    .wrapper {
+        width: 700px!important;
+        margin: 0 auto;
+    }
+    
+    .logo img
+    {
+        margin: 20px 0px;
+    }
+    
+    .logo
+    {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 759px) and (min-width: 320px)
+{
+    .wrapper {
+        width: 100%!important;
+        margin: 0;
+        position: relative;
+    }
+    
+    .logo
+    {
+        text-align: center;
+    }
+    
+    .logo img
+    {
+        margin: 20px 0px;
+    }
+    
+    header
+    {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 1020px)
+{
+    .wrapper
+    {
+        width: 980px;
+        margin:0 auto;
+    }
+    
+    .logo img
+    {
+        position: relative;
+        top: 60px;
+    }
+}
+
+h1
+{
+    font-weight: bold;
+}
+
+header h1
+{
+        font-size: 33px;
+}
+
+header h1, header h2 
+{
+    text-shadow: 1px 1px 1px #e5e5e5;
+}
+
+h2
+{
+	font-size: 18px;
+    line-height: 130%;
+    margin: 0;
+    font-weight: normal;
+    color:#999;
+}
+
+section#conteudo
+{
+    padding: 20px;
+}
+
+
+
+.form
+{
+    margin: 20px;
+    background-color: #a92d33;
+    color: white;
+    border-radius: 8px;
+    padding: 10px 30px;
+    min-height: 503px;
+}
+
+.form h3
+{
+    font-size: 26px;
+    line-height: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+}
+
+.form p
+{
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Lato', sans-serif;
+}
+
+.form label
+{
+    color:#EFEFEF;
+    font-weight: normal;
+    font-size: 14px
+}
+
+.form .form-control
+{
+    height: 36px;
+    border-radius: 0px;
+    background-color: rgba(255, 255, 255, 0.9); 
+}
+
+.conteudo
+{
+    margin: 20px 0px;
+    text-align: justify;
+    font-family: 'Lato', sans-serif;
+}
+
+.conteudo img
+{
+    width:100%;
+}
+
+.conteudo ul
+{
+    list-style-type: square
+}
+
+.conteudo ul li
+{
+    margin-left: -20px;
+    
+}
+
+.conteudo h3
+{
+    font-size: 20px;
+    text-align: justify;
+    margin-top: 20px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #e5e5e5;
+}
+
+.conteudo p
+{
+    font-size: 14px;
+    line-height: 150%;
+}
+
+.form .btn-success
+{
+    background-color: #3dab1b!important;
+    text-transform: uppercase;
+    font-weight: bold;
+    height: 45px;
+    text-shadow: 1px 1px 2px #004500;
+    letter-spacing: 1px;
+    font-family: 'Lato', sans-serif!important;
+    background-image:none;
+    border-color: none; 
+    border-radius: 0px;
+    border: 1px solid #239101;
+}
+
+.form .btn-success:hover
+{
+    background-color: #56c434!important;
+}
+

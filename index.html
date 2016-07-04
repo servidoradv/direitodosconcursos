@@ -1,0 +1,458 @@
+﻿<html ng-app="Servidor">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Direito dos Concursos | Debate sobre direitos dos candidatos a cargos públicos</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+    <meta charset="utf-8">
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="title" content="{{tituloPaginaURL}}">
+    <meta name="description" content="{{tituloPaginaDescription}}">
+    <!-- Google will often use this as its description of your page/site. Make it good. -->
+    <meta property="og:site_name" content="Cassel Ruzzarin Santos Rodrigues Advogados" />
+    <meta property="og:title" content="{{tituloPaginaURL}}" />
+    <meta property="og:url" content="{{linkPaginaURL}}" />
+    <meta property="og:type" content="website" />
+    <meta property="fb:admins" content="" />
+    <!--<meta property="og:video" content="" />
+    <meta property="og:video:type" content="" />-->
+    <meta property="og:image" content="http://servidor.adv.br/img/ui/sala_advogados_bsb.jpg" />
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="640">
+    <meta property="og:image:height" content="326">
+    <meta name="author" content=" ">
+
+    <!-- Dublin Core Metadata : http://dublincore.org/ -->
+    <meta name="DC.title" content="Cassel Ruzzarin Santos Rodrigues - Advogados">
+    <meta name="DC.subject" content="">
+    <meta name="DC.creator" content="Jonathas Holanda">
+    <!--  Mobile Viewport Fix -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <!-- This is the traditional favicon. -->
+    <link rel="shortcut icon" type="image/x-icon" href="http://servidor.adv.br/img/favicon.ico" />
+    <!-- The is the icon for iOS's Web Clip. -->
+    <link rel="apple-touch-icon" href="http://servidor.adv.br/img/apple-touch-icon.png">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="http://servidor.adv.br/css/angular-busy.min.css" media="screen" />
+
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300' rel='stylesheet' type='text/css'>
+
+    <!-- CSS: screen, mobile & print are all in the same file -->
+
+    <link rel="stylesheet" href="app/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="app/themes/css/utils.css">
+    <link rel="stylesheet" href="app/themes/css/bootstrap-custom.css">
+    <link rel="stylesheet" href="app/themes/css/estilos.css">
+    <link rel="stylesheet" href="app/themes/css/posts.css">
+    <link rel="stylesheet" href="app/themes/css/social-share.css">
+    <link rel="stylesheet" href="/site/app/themes/font/fonts.css" />
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+    <link rel="stylesheet" href="app/themes/owl-carousel/owl.carousel.css" />
+    <link rel="stylesheet" href="app/themes/owl-carousel/owl.theme.css" />
+
+    <script src="app/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="app/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="app/bower_components/angular/angular.min.js"></script>
+    <script src="app/bower_components/angular/angular-sanitize.js"></script>
+    <script src="app/bower_components/angular-route/angular-route.min.js"></script>
+    <script src="http://servidor.adv.br/js/angular-busy.min.js"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script>
+
+    <script src="app.js"></script>
+    <script src="app/js/configValues.js"></script>
+    <script src="app/controllers/Main/main-controller.js"></script>
+    <script src="app/controllers/BlogDireitoConcursos/Posts/posts-controller.js"></script>
+    <script src="app/controllers/BlogDireitoConcursos/Posts/posts-service.js"></script>
+    <script src="app/controllers/Campos de Interesse/camposdeinteresse-controller.js"></script>
+    <script src="app/controllers/Campos de Interesse/camposdeinteresse-service.js"></script>
+    <script src="app/controllers/Suporte Jurídico/suportejuridico-controller.js"></script>
+    <script src="app/controllers/Suporte Jurídico/suportejuridico-service.js"></script>
+    <script src="app/controllers/Top 10/topdez-controller.js"></script>
+    <script src="app/controllers/Top 10/topdez-service.js"></script>
+
+    <base href="/direitoconcursos/#" />
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container">
+            <nav id="navigation">
+                <div id="header">
+                    <div class="col-md-3 navbar-header">
+                        <h1 id="logo">
+                            <a ng-href="/direitoconcursos/index.html#/">
+                                <img src="app/themes/img/direitoLogo.png" />
+                            </a>
+                        </h1>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navTop" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="secondary-navigation">
+                            <div class="collapse navbar-collapse" id="navTop">
+                                <ul id="navbar" class="menu sf-js-enabled">
+                                    <li class="menu-item "><a href="/direitoconcursos/index.html#/">Home</a></li>
+                                    <li class="menu-item "><a href="/direitoconcursos/index.html#/sobre-nos">Sobre nós</a></li>
+                                    <li class="menu-item "><a href="/direitoconcursos/index.html#/top-dez">Top 10 - Investigação Social</a></li>
+                                    <li class="menu-item "><a href="/direitoconcursos/index.html#/contato">Contato</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="banner">
+        <img src="app/themes/img/bannerTopo.jpg" />
+    </div>
+
+    <div class="secaoItens">
+        <a href="/direitoconcursos/index.html#/posts/categoria/Artigos">
+            <img src="app/themes/img/artigos.png" onmouseout="this.src = 'app/themes/img/artigos.png'" onmouseover="this.src = 'app/themes/img/artigos-hover.png'" />
+        </a>
+        <a href="/direitoconcursos/index.html#/posts/categoria/Julgados">
+            <img src="app/themes/img/julgados.png" onmouseout="this.src = 'app/themes/img/julgados.png'" onmouseover="this.src = 'app/themes/img/julgados-hover.png'" />
+        </a>
+        <a href="/direitoconcursos/index.html#/posts/categoria/Notícias">
+            <img src="app/themes/img/noticias.png" onmouseout="this.src = 'app/themes/img/noticias.png'" onmouseover="this.src = 'app/themes/img/noticias-hover.png'" />
+        </a>
+    </div>
+
+    <div class="main-container" id="page" style="padding-bottom: 80px;">
+        <div class="col-md-9 col-xs-12">
+            <div class="postsHome">
+                <div class="noticias" ng-view=""></div>
+            </div>
+        </div>
+        <div class="col-md-3 col-xs-12">
+            <div id="sidebars" class="g">
+                <div class="sidebar">
+                    <ul class="sidebar_list">
+                        <!--<li class="widget widget-sidebar searchform">
+                            <input type="text" class="busca searching" value="Pesquisar..." name="s" id="searchblog" onblur="if (this.value == '') {this.value = 'Pesquisar...';}" onfocus="if (this.value == 'Pesquisar...') {this.value = '';}" />
+                            <button class="search btnBusca" onclick="Buscar()">
+                                <img src="app/themes/img/search.png" />
+                            </button>
+                        </li>-->
+                        <li class="widget widget-sidebar" ng-controller="SuporteJuridicoCtrl">
+                            <h3>Suporte Jurídico</h3>
+                            <div class="text-left" ng-show="loadingSuporteJuridico">
+                                <img src="app/themes/img/facebook.gif" style="position: relative; top: 10px; margin-right: 10px;" />
+                            </div>
+                            <div class="textwidget" ng-repeat="item in listaSuporteJuridico">
+                                <a ng-href="{{item.link}}" target="_blank">
+                                    <img ng-src="{{item.imagem}}">
+                                </a>
+                            </div>
+                        </li>
+                        <li class="widget widget-sidebar">
+                            <h3>Autores</h3>
+                            <div class="textwidget">
+                                <p align="justify">O blog “Direito dos Concursos” surgiu do objetivo dos advogados do escritório Cassel Ruzzarin Santos Rodrigues Advogados discutirem a legalidade dos atos das bancas de concurso público.</p>
+
+                                <p align="justify">
+                                    Serão divulgadas matérias atualizadas, artigos de opinião sobre temas específicos e editorias de concursos. Concurseiros, vocês poderão opinar, sugerir e principalmente tirar suas dúvidas. O blog é de vocês!
+                                </p>
+                            </div>
+                        </li>
+
+                        <li class="widget widget-sidebar">
+                            <h3>Categorias</h3>
+                            <ul class="list-unstyled">
+                                <li class="cat-item">
+                                    <a href="/direitoconcursos/index.html#/posts/categoria/Artigos/" title="Artigos opinativos que serão elaborados pelos membros do escritório. Publicação semanal toda sexta-feira."><i class="glyphicon glyphicon-chevron-right"></i>&nbsp;Artigos</a>
+                                </li>
+                                <li class="cat-item">
+                                    <a href="/direitoconcursos/index.html#/posts/categoria/Julgados/" title="Julgado ou informativo relevante para o público. Publicação semanal toda segunda-feira."><i class="glyphicon glyphicon-chevron-right"></i>&nbsp;Julgados</a>
+                                </li>
+                                <li class="cat-item">
+                                    <a href="/direitoconcursos/index.html#/posts/categoria/Notícias/" title="Informações e artigos de terceiros que interessam aos servidores público. Publicação semanal toda quarta-feira."><i class="glyphicon glyphicon-chevron-right"></i>&nbsp;Notícias</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="widget widget-sidebar searchform">
+                            <h3>receba no e-mail</h3>
+                            <form id="newsletter-form" action="https://servidorapi.azurewebsites.net/api/SuporteJuridico/EnviarEmail" method="POST">
+                                <input type="email" name="emailnewsletter" id="emailnewsletter" class="newsletter" value="Digite seu e-mail..." onblur="if (this.value == '') {this.value = 'Digite seu e-mail...';}" onfocus="if (this.value == 'Digite seu e-mail...') {this.value = '';}" />
+                                <input type="hidden" name="blogUrl" id="blogUrl" value="direitodosconcursos">
+                                <input type="hidden" name="c_utmzz" id="c_utmzz" value="">
+                                <script type="text/javascript">
+                                    function read_cookieN(a) { var b = a + "="; var c = document.cookie.split(";"); for (var d = 0; d < c.length; d++) { var e = c[d]; while (e.charAt(0) == " ") e = e.substring(1, e.length); if (e.indexOf(b) == 0) { return e.substring(b.length, e.length) } } return null } try { document.getElementById("c_utmzz").value = read_cookie("__utmzz") } catch (err) { }
+                                </script>
+                                <button class="btnNewsletter">
+                                    <img src="app/themes/img/plane.png" />
+                                </button>
+                            </form>
+                            <h5 id="enviandoemail" style="text-align: center;font-size: 12px;margin: 10px;"></h5>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function createCookieN(a, b, c) {
+            if (c) {
+                var d = new Date;
+                d.setTime(d.getTime() + c * 24 * 60 * 60 * 1e3);
+                var e = "; expires=" + d.toGMTString()
+            } else var e = "";
+            document.cookie = a + "=" + b + e + "; path=/"
+        }
+
+        function readCookieN(a) {
+            var b = a + "=";
+            var c = document.cookie.split(";");
+            for (var d = 0; d < c.length; d++) {
+                var e = c[d];
+                while (e.charAt(0) == " ") e = e.substring(1, e.length);
+                if (e.indexOf(b) == 0) return e.substring(b.length, e.length)
+            }
+            return null
+        }
+
+        function eraseCookieN(a) {
+            createCookie(a, "", -1)
+        }
+
+        function saveConversion() { }
+
+        function setUtmzValN() {
+            try {
+                var a = readCookieN("__utmzz");
+                $("input[type=hidden][name=c_utmzz]").val(a)
+            } catch (b) { }
+        }
+
+        function conversionSuccessN(a) {
+            $("#enviandoemail").html("Email enviado com sucesso.");
+            $("#enviandoemail").attr("class", "enviandoemail-sucesso");
+            $("#newsletter-form").closest('form').find("input[type=email]").val("Digite seu e-mail...");
+        }
+
+        function conversionErrorN(a) {
+            $("#enviandoemail").html("Erro ao enviar email.");
+        }
+
+        function parseRDR(a) { }
+
+        function preSubmitN(formData) {
+            var queryString = $.param(formData);
+            var erros = "";
+            if ($("#emailnewsletter").val().length == 0) {
+                erros += "<p>Preencha o <strong>Email</strong>, por favor</p>";
+            }
+            if ($("#emailnewsletter").val() == "Digite seu e-mail...") {
+                erros += "<p>Preencha o <strong>Email</strong>, por favor</p>";
+            }
+            $("#mensagem_erroN").html("");
+            if (erros.length > 0) {
+                $("#mensagem_erroN").html(erros);
+                return false;
+            } else {
+                $("#enviandoemail").html("Aguarde. Enviando email...");
+                return true;
+            }
+        }
+
+        function ajaxCbN(a) {
+            if (a.status === 200) {
+                conversionSuccessN(a)
+            } else {
+                conversionErrorN(a)
+            }
+        }
+        if (typeof console == "undefined" || typeof console.log == "undefined") var console = {
+            log: function () { }
+        };
+
+        $(".btnNewsletter").click(function (a) {
+            setUtmzValN();
+            var formData = new FormData(this);
+            var d = $("#newsletter-form").attr("action");
+            var e = {
+                url: d,
+                type: "GET",
+                dataType: "script",
+                beforeSubmit: preSubmitN,
+                complete: ajaxCbN
+            };
+            $("#newsletter-form").ajaxForm(e);
+        });
+
+    </script>
+    <footer>
+        <div class="container">
+            <div class="col-md-5 col-xs-12">
+                <div class="logoFooter">
+                    <img src="app/themes/img/logoPeq.png" />
+                </div>
+                <div class="logoFooterDesc">
+                    <p>© <span id="anoatual"></span></p>
+                    <p style="font-weight: bold;">Cassel Ruzzarin Santos Rodrigues Advogados</p>
+                    <p>Todos os direitos reservados</p>
+                    <a>
+                        <img src="app/themes/img/twitterSquare.png" />
+                    </a>
+                    <a>
+                        <img src="app/themes/img/facebookSquare.png" />
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-7 col-xs-12">
+                <div class="ondeEstamos">
+                    <h3>onde estamos</h3>
+                    <div class="ondeEstamosCidades">
+                        <div class="col-md-3 col-xs-12 localOndeEstamos">
+                            <div class="cidadesPin">
+                                <img src="/site/app/img-site/pin.png" />
+                            </div>
+                            <div class="cidades">
+                                <p style="font-weight: bold;">Brasília</p>
+                                <a href="/site/#/enderecos">veja o endereço</a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-xs-12 localOndeEstamos">
+                            <div class="cidadesPin">
+                                <img src="/site/app/img-site/pin.png" />
+                            </div>
+                            <div class="cidades">
+                                <p style="font-weight: bold;">Belo Horizonte</p>
+                                <a href="/site/#/enderecos">veja o endereço</a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-xs-12 localOndeEstamos">
+                            <div class="cidadesPin">
+                                <img src="/site/app/img-site/pin.png" />
+                            </div>
+                            <div class="cidades">
+                                <p style="font-weight: bold;">Rio de Janeiro</p>
+                                <a href="/site/#/enderecos">veja o endereço</a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-xs-12 localOndeEstamos">
+                            <div class="cidadesPin">
+                                <img src="/site/app/img-site/pin.png" />
+                            </div>
+                            <div class="cidades">
+                                <p style="font-weight: bold;">Santa Maria</p>
+                                <a href="/site/#/enderecos">veja o endereço</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <a onclick="IrparaoTopo()" class="back-to-top" id="voltaraoinicio">Voltar ao início</a>
+    <script type="text/javascript">
+        function GotoTop() {
+            $('html,body').animate({ scrollTop: 0 }, 'fast');
+        }
+
+        //New Slider jQuery Start
+        $(document).ready(function (e) {
+            $(".menu").click(function () {
+                $(".navigation").slideToggle();
+            });
+            $(document).ready(function () {
+                $('.home_botton').addClass("active");
+            });
+        });
+
+    </script>
+
+    <script>
+        $(window).scroll(function () {
+            if ($(document).scrollTop() > 450) {
+                $('#voltaraoinicio').attr('style', 'display:inline');
+            }
+            else {
+                $('#voltaraoinicio').attr('style', 'display:none');
+            }
+        });
+        function IrparaoTopo() {
+            $('body,html').animate({ scrollTop: 0 }, 600);
+        }
+
+    </script>
+
+    <style>
+        .back-to-top {
+            position: fixed;
+            bottom: 2em;
+            right: 0px;
+            text-decoration: none;
+            color: #000000;
+            background-color: rgba(235, 235, 235, 0.80);
+            font-size: 12px;
+            padding: 1em;
+            display: none;
+        }
+
+            .back-to-top:hover {
+                background-color: rgba(135, 135, 135, 0.50);
+            }
+    </style>
+
+    <script type="text/javascript">
+
+        $("input.busca").keypress(function (e) {
+            if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
+                Buscar();
+            }
+        });
+
+        function Buscar() {
+            var searchblog = $('#searchblog');
+            document.location.href = "/direitoconcursos/index.html#/posts/buscar/" + searchblog.val()
+        }
+
+        function GotoTop() {
+            $('html,body').animate({ scrollTop: 0 }, 'fast');
+        }
+
+        $(function () {
+            var navbarTopo = $("#navTop");
+            navbarTopo.on("click", "a", null, function () {
+                navbarTopo.collapse('hide');
+            });
+        });
+
+        $(document).ready(function () {
+            var d = new Date();
+            var n = d.getFullYear();
+            document.getElementById("anoatual").innerHTML = n;
+
+            //Mobile Nav Menu Start
+            jQuery('.m-menu').click(function () {
+                jQuery('header nav ul').slideToggle();
+            });
+
+            $("#enviandoemail").html("");
+
+        });
+    </script>
+
+</body>
+
+</html>

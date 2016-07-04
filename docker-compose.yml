@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  direito_dos_concursos:
+    image: nginx:alpine
+    volumes:
+      - /var/app/direitodosconcursos:/usr/share/nginx/html:ro
+
+    ports:
+      - "8005:80"
+      - "8035:443"
