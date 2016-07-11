@@ -1732,6 +1732,7 @@ select {
     z-index: 99;
     min-height: 122px;
     border-bottom: 1px solid #DDD;
+    background: rgba(243, 238, 234, 0.4);
 }
 
     .main-header .container {
