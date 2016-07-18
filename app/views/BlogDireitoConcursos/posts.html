@@ -23,7 +23,11 @@
             <div class="subNoticias">
                 <img src="app/themes/img/time.png" /><div class="subNoticiasData">&nbsp;{{p.publicada | date:'dd/MM/yyyy'}}</div>
                 <div class="subNoticiasSecao" ng-repeat="category in p.categorias">
-                    <img src="app/themes/img/court.png"/>&nbsp;
+                     
+                    <img src="app/themes/img/court.png" ng-show="{{category == 'Julgados'}}"/>
+                    <img src="app/themes/img/art.png" ng-show="{{category == 'Artigos'}}"/>
+                    <img src="app/themes/img/not.png" ng-show="{{category == 'Notícias'}}"/>
+                    &nbsp;
                     <a ng-href="{{'/index.html#/posts/categoria/' + category}}" title="{{category}}" rel="nofollow"><span>{{category}}</span></a>
                 </div>
                 <div class="subNoticiasPor">
