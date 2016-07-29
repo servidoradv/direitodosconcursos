@@ -33,7 +33,7 @@
                     </div>
                 </p>
                 <p>
-                    <textarea cols="50" name="mensagem" required="" maxlength="4000" rows="10" placeholder="digite sua mensagem aqui"></textarea>
+                    <textarea cols="50" id="mensagem" name="mensagem" required="" maxlength="4000" rows="10" placeholder="digite sua mensagem aqui"></textarea>
                 </p>
                 <div id="mensagem_erro">
                 </div>
@@ -127,7 +127,12 @@
                     if ($("#telefone").val().length == 0) {
                         erros += "<p>Preencha o número do seu <strong>TELEFONE</strong>, por favor</p>";
                     }
+                    
                     $("#mensagem_erro").html("");
+
+                    //Trocando os \n por <br /> antes de enviar o conteúdo para ir com a formatação correta no HTML
+                    $("#mensagem").val(document.getElementById("mensagem").value.replace(/\n/g, "<br />"));
+
                     if (erros.length > 0) {
                         $("#mensagem_erro").html(erros);
                         return false;
